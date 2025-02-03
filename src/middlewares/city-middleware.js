@@ -4,10 +4,10 @@ const {ErrorResponse}=require("../utils/common");
 const AppError = require("../utils/errors/app-error");
 
 
-function validateCityCreateRequest(req,res,next){
+function validateCreateRequest(req,res,next){
     if(!req.body.name){
         ErrorResponse.message='Something went wrong while creating city';
-        ErrorResponse.error=new AppError(['City not found in the incomming request in the correct form'],StatusCodes.BAD_REQUEST)
+        ErrorResponse.error=new AppError(['City name not found in the incomming request in the correct form'],StatusCodes.BAD_REQUEST)
 
         return res
                 .status(StatusCodes.BAD_REQUEST)
@@ -19,5 +19,5 @@ function validateCityCreateRequest(req,res,next){
 
 
 module.exports={
-    validateCityCreateRequest
+    validateCreateRequest
 }
