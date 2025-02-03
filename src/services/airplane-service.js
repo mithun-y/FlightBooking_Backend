@@ -57,7 +57,7 @@ async function destroyAirplane(id){
         return response;
     } catch (error) {
         if(error.statusCode==StatusCodes.BAD_REQUEST){
-            throw new AppError("The airplane id Not Found",error.statusCode)
+            throw new AppError("The airplane id Not Present",error.statusCode)
         }
         throw new AppError(
           "Cannot fetch data of the airplane",
