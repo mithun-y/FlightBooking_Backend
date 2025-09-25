@@ -41,8 +41,11 @@ async function getAirport(id) {
     const airport = await airportRepository.get(id);
     return airport;
   } catch (error) {
-    if(error.statusCode==StatusCodes.NOT_FOUND){
-        throw new AppError("The airport you requested is Not Found",error.statusCode)
+    if (error.statusCode == StatusCodes.NOT_FOUND) {
+      throw new AppError(
+        "The airport you requested is Not Found",
+        error.statusCode
+      );
     }
     throw new AppError(
       "Cannot fetch data of the airport",
@@ -51,24 +54,24 @@ async function getAirport(id) {
   }
 }
 
-async function destroyAirport(id){
-    try {
-        const response=await airportRepository.destroy(id);
-        return response;
-    } catch (error) {
-        if(error.statusCode==StatusCodes.BAD_REQUEST){
-            throw new AppError("The airport id Not Present",error.statusCode)
-        }
-        throw new AppError(
-          "Cannot fetch data of the airport",
-          StatusCodes.INTERNAL_SERVER_ERROR
-        );
+async function destroyAirport(id) {
+  try {
+    const response = await airportRepository.destroy(id);
+    return response;
+  } catch (error) {
+    if (error.statusCode == StatusCodes.BAD_REQUEST) {
+      throw new AppError("The airport id Not Present", error.statusCode);
     }
+    throw new AppError(
+      "Cannot fetch data of the airport",
+      StatusCodes.INTERNAL_SERVER_ERROR
+    );
+  }
 }
 
 module.exports = {
-    createAirport,
-    getAirports,
-    getAirport,
-    destroyAirport
+  createAirport,
+  getAirports,
+  getAirport,
+  destroyAirport,
 };

@@ -4,7 +4,7 @@ const {AirportMiddlewares}=require("../../middlewares")
 
 const router=express.Router();
 
-console.log(AirportController)
+
 //  /api/v1/airports post
 router.post('/',
             AirportMiddlewares.validateCreateRequest,
