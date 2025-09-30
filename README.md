@@ -1,3 +1,28 @@
+Flight Booking System Backend
+
+A server-side application that powers a modern flight booking platform, built with a RESTful API design. It manages all core functionalities, including user authentication, flight search, and reservation handling, with a focus on a clean architecture and exceptional reliability.
+
+`Features`
+
+User Management: Secure user registration and authentication using JWT (JSON Web Tokens) for protected API access.
+Flight Search: Enables users to search for available flights based on various parameters such as origin, destination, and dates.
+Booking Management: Allows users to create, view, and manage flight reservations.
+Robust Error Handling: A centralized error-handling middleware ensures predictable and consistent error responses for both expected and unexpected issues.
+Database ORM: Utilizes the Sequelize ORM to provide an elegant, promise-based interface for interacting with a SQL database, abstracting complex raw queries.
+Data Validation: Implements data validation on all incoming requests to maintain data integrity and prevent errors.
+Airport Management (Admin): Provides an administrative interface for managing airport information, including adding new airports and updating details.
+Airplane Management (Admin): Offers tools for administrators to manage airline fleet data, including adding, updating, and removing airplanes.
+
+`Technology Stack`
+
+Backend: Node.js, Express.js
+ORM: Sequelize
+Database: SQL
+Authentication: JSON Web Tokens (JWT)
+
+
+
+
 
 `src` -> Inside the src folder all the actual source code regarding the project will reside, this will not include any kind of tests. (You might want to make separate tests folder)
 
